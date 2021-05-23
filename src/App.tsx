@@ -11,7 +11,7 @@ function App() {
 
     useEffect(()=>{
         //setting debounce time of 250ms before updating srcDoc to incorporate typing speed
-        setTimeout(()=>setSrcDoc(`
+        const timer = setTimeout(()=>setSrcDoc(`
                 <html>
                    <body>
                     ${html}
@@ -20,6 +20,8 @@ function App() {
                     <script>${js}</script>
                   </html>
            `), 400);
+
+        return () => clearTimeout(timer);
     },[html, css, js]);
 
   return (
