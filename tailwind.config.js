@@ -5,6 +5,9 @@ module.exports = {
     minWidth: {
       '10vw': '10vw',
     },
+    maxWidth: {
+      '850px': '850px',
+    },
     extend: {},
   },
   variants: {
