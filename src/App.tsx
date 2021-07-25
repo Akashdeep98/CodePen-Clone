@@ -4,6 +4,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
+import 'antd/dist/antd.css';
 
 import Home from "./components/Home/Home";
 

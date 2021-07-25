@@ -1,8 +1,10 @@
 import {useEffect, useState} from "react";
 
-const defaultKeyPrefix = "code-pen-clone-";
+export const defaultKeyPrefix = "code-pen-clone-";
 
-const useLocalStorage = (key: string, initialValue: (string | (() => string))) => {
+type useLocalStorageType = (key:string, initialValue: (string | (() => string)))=>[string ,React.Dispatch<React.SetStateAction<string>>];
+
+const useLocalStorage:useLocalStorageType = (key: string, initialValue: (string | (() => string))) => {
 
     const [value, setValue] = useState<string>(() => {
         const localStorageData = localStorage.getItem(defaultKeyPrefix + key);
